@@ -1,0 +1,77 @@
+plugins {
+    id 'java-platform'
+    id 'maven-publish'
+}
+
+javaPlatform {
+    allowDependencies()
+}
+
+dependencies {
+    api(platform("io.vertx:vertx-stack-depchain:${vertxVersion}"))
+    constraints {
+        api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
+        api "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinCoroutinesVersion"
+
+
+        api "io.skerna.libs:skerna-slbase-metadata:$version"
+        api "io.skerna.libs:skerna-slbase-jvm:$version"
+        api "io.skerna.libs:skerna-slbase-js:$version"
+        
+        api "io.skerna.libs:skerna-sansi-metadata:$version"
+        api "io.skerna.libs:skerna-sansi-jvm:$version"
+        api "io.skerna.libs:skerna-sansi-js:$version"
+
+
+        api "io.skerna.libs:skerna-slogs-metadata:$version"
+        api "io.skerna.libs:skerna-slogs-jvm:$version"
+        api "io.skerna.libs:skerna-slogs-js:$version"
+
+
+        api "io.skerna.libs:skerna-sfuture-metadata:$version"
+        api "io.skerna.libs:skerna-sfuture-jvm:$version"
+        api "io.skerna.libs:skerna-sfuture-js:$version"
+
+
+        api "io.skerna.libs:skerna-sfuture-metadata:$version"
+        api "io.skerna.libs:skerna-sfuture-jvm:$version"
+        api "io.skerna.libs:skerna-sfuture-js:$version"
+
+
+        api "io.skerna.libs:skerna-octopus-metadata:$version"
+        api "io.skerna.libs:skerna-octopus-jvm:$version"
+        api "io.skerna.libs:skerna-octopus-js:$version"
+
+
+
+        api "io.skerna.libs:skerna-sreval-metadata:$version"
+        api "io.skerna.libs:skerna-sreval-jvm:$version"
+        api "io.skerna.libs:skerna-sreval-js:$version"
+
+
+        api "io.skerna.libs:skerna-i18nexceptions:$version"
+        api "io.skerna.libs:skerna-shield:$version"
+
+
+        api "io.skerna.libs:skerna-dsql-metadata:$version"
+        api "io.skerna.libs:skerna-dsql-jvm:$version"
+        api "io.skerna.libs:skerna-dsql-js:$version"
+
+        api "io.skerna.libs:skerna-bolt:$version"
+
+
+
+
+    }
+}
+
+
+
+publishing {
+    publications {
+        myPlatform(MavenPublication) {
+            from components.javaPlatform
+        }
+    }
+}
+
