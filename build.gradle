@@ -8,68 +8,66 @@ javaPlatform {
 }
 
 dependencies {
-    api(platform("io.vertx:vertx-stack-depchain:${vertxVersion}"))
     constraints {
         api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
         api "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinCoroutinesVersion"
 
 
-        api "io.skerna.libs:skerna-slbase-metadata:$version"
-        api "io.skerna.libs:skerna-slbase-jvm:$version"
-        api "io.skerna.libs:skerna-slbase-js:$version"
+        api "io.skerna.commons:skerna-slbase-metadata:$version"
+        api "io.skerna.commons:skerna-slbase-jvm:$version"
+        api "io.skerna.commons:skerna-slbase-js:$version"
         
-        api "io.skerna.libs:skerna-sansi-metadata:$version"
-        api "io.skerna.libs:skerna-sansi-jvm:$version"
-        api "io.skerna.libs:skerna-sansi-js:$version"
+        api "io.skerna.commons:skerna-sansi-metadata:$version"
+        api "io.skerna.commons:skerna-sansi-jvm:$version"
+        api "io.skerna.commons:skerna-sansi-js:$version"
 
 
-        api "io.skerna.libs:skerna-slogs-metadata:$version"
-        api "io.skerna.libs:skerna-slogs-jvm:$version"
-        api "io.skerna.libs:skerna-slogs-js:$version"
+        api "io.skerna.commons:skerna-logger-metadata:$version"
+        api "io.skerna.commons:skerna-logger-jvm:$version"
+        api "io.skerna.commons:skerna-logger-js:$version"
 
 
-        api "io.skerna.libs:skerna-sfuture-metadata:$version"
-        api "io.skerna.libs:skerna-sfuture-jvm:$version"
-        api "io.skerna.libs:skerna-sfuture-js:$version"
+        api "io.skerna.commons:skerna-sreaction-metadata:$version"
+        api "io.skerna.commons:skerna-sreaction-jvm:$version"
+        api "io.skerna.commons:skerna-sreaction-js:$version"
 
 
-        api "io.skerna.libs:skerna-sfuture-metadata:$version"
-        api "io.skerna.libs:skerna-sfuture-jvm:$version"
-        api "io.skerna.libs:skerna-sfuture-js:$version"
-
-
-        api "io.skerna.libs:skerna-octopus-metadata:$version"
-        api "io.skerna.libs:skerna-octopus-jvm:$version"
-        api "io.skerna.libs:skerna-octopus-js:$version"
+        api "io.skerna.commons:skerna-octopus-metadata:$version"
+        api "io.skerna.commons:skerna-octopus-jvm:$version"
+        api "io.skerna.commons:skerna-octopus-js:$version"
 
 
 
-        api "io.skerna.libs:skerna-sreval-metadata:$version"
-        api "io.skerna.libs:skerna-sreval-jvm:$version"
-        api "io.skerna.libs:skerna-sreval-js:$version"
+        api "io.skerna.commons:skerna-sreval-metadata:$version"
+        api "io.skerna.commons:skerna-sreval-jvm:$version"
+        api "io.skerna.commons:skerna-sreval-js:$version"
 
 
-        api "io.skerna.libs:skerna-i18nexceptions:$version"
-        api "io.skerna.libs:skerna-shield:$version"
+        api "io.skerna.commons:skerna-i18nexceptions:$version"
+        api "io.skerna.commons:shield-jwks:$version"
+        api "io.skerna.commons:shield-jwktresolver:$version"
+        api "io.skerna.commons:shield-jwtverifier:$version"
 
+        
+        api "io.skerna.commons:skerna-dsql-metadata:$version"
+        api "io.skerna.commons:skerna-dsql-jvm:$version"
+        api "io.skerna.commons:skerna-dsql-js:$version"
 
-        api "io.skerna.libs:skerna-dsql-metadata:$version"
-        api "io.skerna.libs:skerna-dsql-jvm:$version"
-        api "io.skerna.libs:skerna-dsql-js:$version"
-
-        api "io.skerna.libs:skerna-bolt:$version"
-
-
-
-
+        api "io.skerna.commons:bolt-core:$version"
+        api "io.skerna.commons:bolt-oidc:$version"
+        api "io.skerna.commons:bolt-web:$version"
+        api "io.skerna.commons:bolt-oidc:$version"
     }
 }
 
 
-
 publishing {
     publications {
-        myPlatform(MavenPublication) {
+        maven(MavenPublication) {
+            groupId project.group
+            artifactId project.name
+            version project.version
+
             from components.javaPlatform
         }
     }
