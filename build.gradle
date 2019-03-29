@@ -7,56 +7,58 @@ javaPlatform {
     allowDependencies()
 }
 
+def baseGroup ="io.skerna.commons"
 dependencies {
     constraints {
         api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesVersion"
         api "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinCoroutinesVersion"
 
 
-        api "io.skerna.commons:skerna-slbase-metadata:$version"
-        api "io.skerna.commons:skerna-slbase-jvm:$version"
-        api "io.skerna.commons:skerna-slbase-js:$version"
+        api "$baseGroup:skerna-slbase-metadata:$version"
+        api "$baseGroup:skerna-slbase-jvm:$version"
+        api "$baseGroup:skerna-slbase-js:$version"
         
-        api "io.skerna.commons:skerna-sansi-metadata:$version"
-        api "io.skerna.commons:skerna-sansi-jvm:$version"
-        api "io.skerna.commons:skerna-sansi-js:$version"
+        api "$baseGroup:skerna-sansi-metadata:$version"
+        api "$baseGroup:skerna-sansi-jvm:$version"
+        api "$baseGroup:skerna-sansi-js:$version"
 
 
-        api "io.skerna.commons:skerna-logger-metadata:$version"
-        api "io.skerna.commons:skerna-logger-jvm:$version"
-        api "io.skerna.commons:skerna-logger-js:$version"
+        api "$baseGroup:skerna-logger-metadata:$version"
+        api "$baseGroup:skerna-logger-jvm:$version"
+        api "$baseGroup:skerna-logger-js:$version"
 
 
-        api "io.skerna.commons:skerna-sreaction-metadata:$version"
-        api "io.skerna.commons:skerna-sreaction-jvm:$version"
-        api "io.skerna.commons:skerna-sreaction-js:$version"
+        api "$baseGroup:skerna-sreaction-metadata:$version"
+        api "$baseGroup:skerna-sreaction-jvm:$version"
+        api "$baseGroup:skerna-sreaction-js:$version"
 
 
-        api "io.skerna.commons:skerna-octopus-metadata:$version"
-        api "io.skerna.commons:skerna-octopus-jvm:$version"
-        api "io.skerna.commons:skerna-octopus-js:$version"
+        api "$baseGroup:skerna-octopus-metadata:$version"
+        api "$baseGroup:skerna-octopus-jvm:$version"
+        api "$baseGroup:skerna-octopus-js:$version"
 
 
 
-        api "io.skerna.commons:skerna-sreval-metadata:$version"
-        api "io.skerna.commons:skerna-sreval-jvm:$version"
-        api "io.skerna.commons:skerna-sreval-js:$version"
+        api "$baseGroup:skerna-sreval-metadata:$version"
+        api "$baseGroup:skerna-sreval-jvm:$version"
+        api "$baseGroup:skerna-sreval-js:$version"
 
 
-        api "io.skerna.commons:skerna-i18nexceptions:$version"
-        api "io.skerna.commons:shield-jwks:$version"
-        api "io.skerna.commons:shield-jwktresolver:$version"
-        api "io.skerna.commons:shield-jwtverifier:$version"
+        api "$baseGroup:skerna-i18nexceptions:$version"
+        
+        api "$baseGroup:shield-jwks:$version"
+        api "$baseGroup:shield-jwktresolver:$version"
+        api "$baseGroup:shield-jwtverifier:$version"
 
         
-        api "io.skerna.commons:skerna-dsql-metadata:$version"
-        api "io.skerna.commons:skerna-dsql-jvm:$version"
-        api "io.skerna.commons:skerna-dsql-js:$version"
+        api "$baseGroup:skerna-dsql-metadata:$version"
+        api "$baseGroup:skerna-dsql-jvm:$version"
+        api "$baseGroup:skerna-dsql-js:$version"
 
-        api "io.skerna.commons:bolt-core:$version"
-        api "io.skerna.commons:bolt-oidc:$version"
-        api "io.skerna.commons:bolt-web:$version"
-        api "io.skerna.commons:bolt-oidc:$version"
+        api "$baseGroup:skerna-autogen:$version"
+        api "$baseGroup:skerna-utils:$version"
+        
+
     }
 }
 
