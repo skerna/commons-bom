@@ -7,7 +7,7 @@ javaPlatform {
     allowDependencies()
 }
 
-def baseGroup ="com.gitlab.skerna.libs"
+def baseGroup ="io.skerna.libs"
 dependencies {
     // https://mvnrepository.com/artifact/io.vertx/vertx-stack-depchain
 
