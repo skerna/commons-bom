@@ -1,6 +1,8 @@
 plugins {
     id 'java-platform'
     id 'maven-publish'
+    id "com.jfrog.bintray" version "1.8.4"
+
 }
 
 javaPlatform {
@@ -8,6 +10,7 @@ javaPlatform {
 }
 
 def baseGroup ="io.skerna.libs"
+
 dependencies {
     // https://mvnrepository.com/artifact/io.vertx/vertx-stack-depchain
 
@@ -76,4 +79,6 @@ publishing {
         }
     }
 }
+apply from: "./gradle/publish.gradle"
+
 
