@@ -56,10 +56,15 @@ dependencies {
         api "${baseGroup}.shield:shield-jwtresolver:$version"
         api "${baseGroup}.shield:shield-jwtverifier:$version"
         
-        api "${baseGroup}.dsql:commons-dsql-metadata:$version"
-        api "${baseGroup}.dsql:commons-dsql-jvm:$version"
-        api "${baseGroup}.dsql:commons-dsql-js:$version"
+        api("io.skerna.libs.dsql:dsql-core-metadata:$version")
+        api("io.skerna.libs.dsql:dsql-core-js:$version")
+        api("io.skerna.libs.dsql:dsql-core-jvm:$version")
 
+        api("io.skerna.libs.dsql:dsql-postgres-metadata:$version")
+        api("io.skerna.libs.dsql:dsql-postgres-js:$version")
+        api("io.skerna.libs.dsql:dsql-postgres-jvm:$version")
+        
+        
         api "$baseGroup:commons-autogen:$version"
         api "$baseGroup:commons-utils:$version"
         
